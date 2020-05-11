@@ -6,26 +6,24 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
 public class Main extends Application {
 
-    public static void main(String[] args) {
-        launch(args);
-    }
-
     @Override
-    public void start(Stage primaryStage) {
-        Parent root = null;
-        try {
-           root =  FXMLLoader.load(getClass().getResource("main.fxml"));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/main.fxml"));
 
         Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }
