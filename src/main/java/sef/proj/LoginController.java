@@ -12,6 +12,7 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 
@@ -182,10 +183,19 @@ public class LoginController implements Initializable {
 
     }
 
+    private Menu enterDataFrame;
+
     @FXML
     private void click(ActionEvent event) {
 
-
+        if (event.getSource() == btnsignin) {
+            enterDataFrame = new Menu();
+            try {
+                enterDataFrame.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
 
