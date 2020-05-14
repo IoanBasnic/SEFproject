@@ -192,6 +192,9 @@ public class LoginController implements Initializable {
             enterDataFrame = new Menu();
             try {
                 enterDataFrame.start();
+                Stage stage = (Stage) btnsignin.getScene().getWindow();
+                stage.close();
+
             } catch (Exception e) {
                 e.printStackTrace();
             }

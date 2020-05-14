@@ -1,5 +1,6 @@
 package sef.proj;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -78,7 +80,7 @@ public class MenuController implements Initializable {
             pnlOverview.setStyle("-fx-background-color : #FFFFFF");
             pnlOverview.toFront();
         }
-        if(actionEvent.getSource()== btnCreateSchedule)
+        if(actionEvent.getSource() == btnCreateSchedule)
         {
             pnlOrders.setStyle("-fx-background-color : #464F67");
             pnlOrders.toFront();
@@ -86,7 +88,8 @@ public class MenuController implements Initializable {
 
         if(actionEvent.getSource()== btnSignout)
         {
-
+            Stage stage = (Stage) btnSignout.getScene().getWindow();
+            stage.close();
         }
     }
 }
