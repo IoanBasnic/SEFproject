@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MenuController implements Initializable {
+public class MenuEmployeeController implements Initializable {
 
     @FXML
     private VBox pnItems = null;
@@ -28,14 +28,12 @@ public class MenuController implements Initializable {
     @FXML
     private Button btnCreateSchedule;
 
-    @FXML
-    private Button btnManageSchedules;
+
 
     @FXML
     private Button btnSignout;
 
-    @FXML
-    private Pane pnlManageSchedule;
+
 
     @FXML
     private Pane pnlCreateSchedule;
@@ -43,14 +41,13 @@ public class MenuController implements Initializable {
     @FXML
     private Pane pnlOverview;
 
-    @FXML
-    private JFXButton viewEmployees;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         pnlCreateSchedule.setVisible(false);
-        pnlManageSchedule.setVisible(false);
+
 
         Node[] nodes = new Node[10];
         for (int i = 0; i < nodes.length; i++) {
@@ -81,12 +78,7 @@ public class MenuController implements Initializable {
 
     }
     public void handleClicks(ActionEvent actionEvent) {
-        if (actionEvent.getSource() == btnManageSchedules) {
 
-            pnlManageSchedule.setVisible(true);
-            pnlManageSchedule.setStyle("-fx-background-color : #FFFFFF");
-            pnlManageSchedule.toFront();
-        }
 
         if (actionEvent.getSource() == btnViewSchedule) {
 
