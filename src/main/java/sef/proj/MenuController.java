@@ -1,5 +1,7 @@
 package sef.proj;
 
+
+import com.jfoenix.controls.JFXButton;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -28,24 +31,27 @@ public class MenuController implements Initializable {
     @FXML
     private Button btnManageSchedules;
 
-
     @FXML
     private Button btnSignout;
 
     @FXML
-    private Pane pnlCustomer;
+    private Pane pnlManageSchedule;
 
     @FXML
-    private Pane pnlOrders;
+    private Pane pnlCreateSchedule;
 
     @FXML
     private Pane pnlOverview;
 
     @FXML
-    private Pane pnlMenus;
+    private JFXButton viewEmployees;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        pnlCreateSchedule.setVisible(false);
+        pnlManageSchedule.setVisible(false);
+
         Node[] nodes = new Node[10];
         for (int i = 0; i < nodes.length; i++) {
             try {
@@ -70,23 +76,31 @@ public class MenuController implements Initializable {
     }
 
 
+    @FXML
+    private void setViewEmployees(MouseEvent event) {
+
+    }
     public void handleClicks(ActionEvent actionEvent) {
         if (actionEvent.getSource() == btnManageSchedules) {
-            pnlCustomer.setStyle("-fx-background-color : #1620A1");
-            pnlCustomer.toFront();
+
+            pnlManageSchedule.setVisible(true);
+            pnlManageSchedule.setStyle("-fx-background-color : #FFFFFF");
+            pnlManageSchedule.toFront();
         }
 
         if (actionEvent.getSource() == btnViewSchedule) {
+
             pnlOverview.setStyle("-fx-background-color : #FFFFFF");
             pnlOverview.toFront();
         }
         if(actionEvent.getSource() == btnCreateSchedule)
         {
-            pnlOrders.setStyle("-fx-background-color : #464F67");
-            pnlOrders.toFront();
+            pnlCreateSchedule.setVisible(true);
+            pnlCreateSchedule.setStyle("-fx-background-color : #FFFFFF");
+            pnlCreateSchedule.toFront();
         }
 
-        if(actionEvent.getSource()== btnSignout)
+        if(actionEvent.getSource() == btnSignout)
         {
             Stage stage = (Stage) btnSignout.getScene().getWindow();
             stage.close();
