@@ -184,16 +184,26 @@ public class LoginController implements Initializable {
     }
 
     private Menu enterDataFrame;
-
+    private MenuEmployee enterDataFrame2;
     @FXML
     private void click(ActionEvent event) {
 
         if (event.getSource() == btnsignin) {
             enterDataFrame = new Menu();
+            enterDataFrame2 = new MenuEmployee();
             try {
-                enterDataFrame.start();
-                Stage stage = (Stage) btnsignin.getScene().getWindow();
-                stage.close();
+
+                if(n1.getText().equals("manager")) {
+                    enterDataFrame.start();
+                    Stage stage = (Stage) btnsignin.getScene().getWindow();
+                    stage.close();
+                }
+
+                if(n1.getText().equals("employee")) {
+                    enterDataFrame2.start();
+                    Stage stage_employee = (Stage) btnsignin.getScene().getWindow();
+                    stage_employee.close();
+                }
 
             } catch (Exception e) {
                 e.printStackTrace();
