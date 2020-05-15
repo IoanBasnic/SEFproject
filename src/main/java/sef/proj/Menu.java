@@ -15,7 +15,7 @@ public class Menu extends Application {
 
 
     public void start() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/menu.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/menumanager.fxml"));
         Stage primaryStage = new Stage();
         primaryStage.setScene(new Scene(root));
         //set stage borderless

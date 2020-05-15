@@ -1,5 +1,5 @@
 
-package sef.proj;
+package sef.proj.controllers;
 
 import com.jfoenix.controls.JFXButton;
 import java.net.URL;
@@ -14,7 +14,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
+import sef.proj.Menu;
 
 
 /**
