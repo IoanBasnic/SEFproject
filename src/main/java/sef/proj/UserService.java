@@ -48,7 +48,7 @@ public class UserService {
         for (User user : users) {
             if (Objects.equals(username, user.getUserName()) ) {
                 if(user.getRole().equals("Manager"))
-                    return "ItsManager";
+                    return " ItsManager ";
                 else
                     return "ItsEmployee";
             }
