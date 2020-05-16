@@ -22,7 +22,7 @@
             <children>
                 <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="/images/icons8_Person_32px.png" />
+                        <Image url="/images/icons8-person-calendar-32.png" />
                     </image>
                     <VBox.margin>
                         <Insets bottom="10.0" top="50.0" />
@@ -36,7 +36,7 @@
                     <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="/images/icons8-schedule-32.png" />
+                                <Image url="/images/icons8-date-to-32.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -54,7 +54,7 @@
                     <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="/images/icons8_Open_Envelope_32px.png" />
+                                <Image url="/images/icons8-edit-calendar-32.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -66,7 +66,7 @@
                     <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="/images/icons8_Person_32px.png" />
+                                <Image url="/images/icons8-view-schedule-32.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -79,7 +79,7 @@
                     <graphic>
                         <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="/images/icons8_Sign_Out_32px.png" />
+                                <Image url="/images/icons8-sign-out-32.png" />
                             </image>
                         </ImageView>
                     </graphic>

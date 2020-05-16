@@ -12,7 +12,7 @@
     <children>
         <ImageView fitHeight="31.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="/images/icons8-schedule-32.png" />
+                <Image url="/images/icons8-calendar-32.png" />
             </image>
             <HBox.margin>
                 <Insets left="10.0" />

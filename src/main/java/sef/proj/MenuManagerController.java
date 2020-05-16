@@ -92,7 +92,7 @@ public class MenuManagerController implements Initializable {
     @FXML
     private void setViewEmployees(MouseEvent event) {
 
-        if(event.getSource() == btnViewSchedule) {
+        if(event.getSource() == viewEmployees) {
             PopupEmployees popupEmployees = new PopupEmployees();
             try {
                 popupEmployees.start();
