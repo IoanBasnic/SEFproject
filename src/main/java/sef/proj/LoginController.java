@@ -248,7 +248,7 @@ public class LoginController implements Initializable {
         if (event.getSource() == btnsignin) {
             enterDataFrame = new Menu();
             enterDataFrame2 = new MenuEmployee();
-            /*
+
             try {
 
                 if(n1.getText().equals("manager-test")) {
@@ -265,7 +265,7 @@ public class LoginController implements Initializable {
 
             } catch (Exception e) {
                 e.printStackTrace();
-            } */
+            }
         }
 
         if(event.getSource() == btnforgot) {
