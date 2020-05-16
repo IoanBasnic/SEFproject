@@ -16,8 +16,15 @@ import java.util.Objects;
 public class UserService {
 
     private static List<User> users;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("users.json");
+    private static final Path USERS_PATH = FileSystemService.getPathToFile("config","users.json");
 
+
+
+    public static void addUser(String username, String password, String email,String tag,String phone_number,String role) throws UsernameAlreadyExistException {
+        checkUserDoesNotAlreadyExist(username);
+        users.add(new User(username, encodePassword(username, password),email,tag,phone_number,role ));
+        persistUsers();
+    }
     public static void loadUsersFromFile() throws IOException {
 
         if (!Files.exists(USERS_PATH)) {
@@ -29,13 +36,6 @@ public class UserService {
         users = objectMapper.readValue(USERS_PATH.toFile(), new TypeReference<List<User>>() {
         });
     }
-
-    public static void addUser(String username, String password, String email,String tag,String phone_number,String role) throws UsernameAlreadyExistException {
-        checkUserDoesNotAlreadyExist(username);
-        users.add(new User(username, encodePassword(username, password),email,tag,phone_number,role ));
-        persistUsers();
-    }
-
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistException {
         for (User user : users) {
             if (Objects.equals(username, user.getUserName()))
