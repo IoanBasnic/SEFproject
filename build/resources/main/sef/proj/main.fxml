@@ -52,11 +52,9 @@
                         </Label>
                         <JFXButton fx:id="btnsignin" layoutX="189.0" layoutY="375.0" onAction="#click" onMouseClicked="#sign" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="SIGN IN" />
                         <TextField fx:id="n1" layoutX="119.0" layoutY="218.0" prefHeight="32.0" prefWidth="258.0" promptText="Username" />
-                        <Label fx:id="n3" alignment="CENTER" contentDisplay="CENTER" layoutX="115.0" layoutY="323.0" prefHeight="10.0" prefWidth="267.0" text="Forgot my password" textAlignment="CENTER" textFill="#300d33">
-                            <font>
-                                <Font name="System Bold" size="13.0" />
-                            </font>
-                        </Label>
+                        <JFXButton fx:id="btnforgot" layoutX="115.0" layoutY="323.0" onAction="#click" onMouseClicked="#click" prefHeight="32.0" prefWidth="258.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="Forgot my password" />
+
+
                         <PasswordField fx:id="n2" layoutX="119.0" layoutY="268.0" prefHeight="32.0" prefWidth="258.0" promptText="password" />
                     </children>
                 </AnchorPane>

@@ -272,9 +272,6 @@ public class LoginController implements Initializable {
             Popup popup = new Popup();
             popup.start();
 
-
-
-
         }
 
 
