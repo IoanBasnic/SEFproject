@@ -38,6 +38,7 @@ public class UserService {
     }
     private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistException {
         for (User user : users) {
+           // System.out.println(user);
             if (Objects.equals(username, user.getUserName()))
                 throw new UsernameAlreadyExistException(username);
         }
