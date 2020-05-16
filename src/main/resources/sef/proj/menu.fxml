@@ -105,13 +105,13 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <JFXButton fx:id="viewEmployees" layoutX="220.0" layoutY="100.0" onAction="#handleClicks" onMouseClicked="#setViewEmployees" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="VIEW" />
+                        <JFXButton fx:id="viewEmployees" layoutX="220.0" layoutY="100.0" onAction="#setViewEmployees" onMouseClicked="#setViewEmployees" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="VIEW" />
 
                         <HBox alignment="CENTER_LEFT" layoutX="45.0" layoutY="178.0" prefHeight="42.0" prefWidth="712.0" spacing="80.0" style="-fx-background-color: #FFFFFF;">
                             <children>
                                 <Label text="Schedule Name" textFill="#300d33">
                                     <HBox.margin>
-                                        <Insets left="50.0" />
+                                        <Insets left="10.0" />
                                     </HBox.margin>
                                 </Label>
                                 <Label text="Type" textFill="#300d33">

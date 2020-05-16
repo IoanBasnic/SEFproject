@@ -14,6 +14,8 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.TextField?>
+<?import com.jfoenix.controls.JFXButton?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sef.proj.MenuEmployeeController">
     <children>
         <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #300d33;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -88,10 +90,38 @@
                                 <Font size="24.0" />
                             </font>
                         </Label>
-
-                        <HBox alignment="CENTER_LEFT" layoutX="14.0" layoutY="100.0" prefHeight="450.0" prefWidth="746.0" spacing="80.0" style="-fx-background-color: #000000;">
-
-                        </HBox>
+                        <Pane  layoutX="14.0" layoutY="100.0" prefHeight="450.0" prefWidth="746.0" style="-fx-background-color: #300d33;">
+                            <Label layoutX="150.0" layoutY="58.0" text="Schedule Name" textFill="#FFFFFF">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="150.0" layoutY="108.0" text="Schedule Date" textFill="#FFFFFF">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="150.0" layoutY="158.0" text="Schedule Description" textFill="#FFFFFF">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="ScheduleName" layoutX="330.0" layoutY="58.0" prefHeight="32.0" prefWidth="258.0" promptText="Name for Schedule" />
+                            <TextField fx:id="ScheduleDate" layoutX="330.0" layoutY="108.0" prefHeight="32.0" prefWidth="258.0" promptText="Date" />
+                            <TextField fx:id="ScheduleDescription" layoutX="330.0" layoutY="158.0" prefHeight="130.0" prefWidth="258.0" promptText="Description" />
+                            <JFXButton fx:id="btnCreate"
+                                       layoutX="225.0"
+                                       layoutY="380.0"
+                                       onMouseClicked="#btnCreateSchedule"
+                                       prefHeight="39.0"
+                                       prefWidth="258.0"
+                                       style="-fx-background-color: #300d33; -fx-border-radius: 200; -fx-border-color: white; -fx-background-radius: 200; -fx-text-fill: white;"
+                                       text="Create Schedule">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </JFXButton>
+                        </Pane>
                     </children>
                 </Pane>
 
