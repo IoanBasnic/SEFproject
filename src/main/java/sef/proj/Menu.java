@@ -21,7 +21,7 @@ public class Menu extends Application {
         //set stage borderless
         primaryStage.initStyle(StageStyle.UNDECORATED);
 
-        //drag it here
+        //drag it in here
         root.setOnMousePressed(event -> {
             x = event.getSceneX();
             y = event.getSceneY();

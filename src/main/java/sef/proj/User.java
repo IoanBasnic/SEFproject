@@ -10,7 +10,7 @@ public class User {
     private String role;
 
     public User() {
-
+        
     }
     public User(String username,String password,String email,String tag,String phone_number,String role){
         this.username = username;
