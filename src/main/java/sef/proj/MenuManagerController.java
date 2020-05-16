@@ -9,6 +9,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -50,37 +52,76 @@ public class MenuManagerController implements Initializable {
 
     @FXML
     private JFXButton btnCreate;
+
+    @FXML
+    private Label username;
+
+    @FXML
+    private Label printName;
+
+    @FXML
+    private Label printDate;
+
+    @FXML
+    private Label printType;
+
+    @FXML
+    private TextField ScheduleName;
+
+    @FXML
+    private TextField ScheduleDate;
+
+    @FXML
+    private TextField ScheduleDescription;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         pnlCreateSchedule.setVisible(false);
         pnlManageSchedule.setVisible(false);
 
+        try {
+            TaskService.loadUsersFromFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        username.setText("Hello, "+UserService.getGetName());
         Node[] nodes = new Node[10];
         Node[] nodes_2 = new Node[10];
-        for (int i = 0; i < nodes.length; i++) {
+        for (int i = 0; i < TaskService.getSize(); i++) {
             try {
 
                 final int j = i;
                 nodes[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/Schedules.fxml"));
-                nodes_2[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/SchedulesManage.fxml"));
-                //give the items some effect
+              //  nodes_2[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/SchedulesManage.fxml"));
 
-                nodes[i].setOnMouseEntered(event -> {
-                    nodes[j].setStyle("-fx-background-color : #0A0E3F");
-                });
-                nodes[i].setOnMouseExited(event -> {
-                    nodes[j].setStyle("-fx-background-color : #02030A");
-                });
-                pnItems.getChildren().add(nodes[i]);
+                if(TaskService.checkUser(UserService.getGetName())) {
 
-                nodes_2[i].setOnMouseEntered(event -> {
-                    nodes_2[j].setStyle("-fx-background-color : #0A0E3F");
-                });
-                nodes_2[i].setOnMouseExited(event -> {
-                    nodes_2[j].setStyle("-fx-background-color : #02030A");
-                });
-                pnItemsManage.getChildren().add(nodes_2[i]);
+                    printName.setText(TaskService.getName(i));
+                    printDate.setText(TaskService.getDate(i));
+                    printType.setText(TaskService.getDescription(i));
+                    nodes[i].setOnMouseEntered(event -> {
+                        nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                    });
+                    nodes[i].setOnMouseExited(event -> {
+                        nodes[j].setStyle("-fx-background-color : #02030A");
+                    });
+
+                    pnItems.getChildren().add(nodes[i]);
+
+                    nodes_2[i].setOnMouseEntered(event -> {
+                        nodes_2[j].setStyle("-fx-background-color : #0A0E3F");
+                    });
+                    nodes_2[i].setOnMouseExited(event -> {
+                        nodes_2[j].setStyle("-fx-background-color : #02030A");
+                    });
+                    pnItemsManage.getChildren().add(nodes_2[i]);
+                }
+
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -106,6 +147,15 @@ public class MenuManagerController implements Initializable {
     @FXML
     private void btnCreateSchedule(MouseEvent event) {
 
+        if(event.getSource() == btnCreate) {
+            try {
+                TaskService.addTask(UserService.getGetName(), ScheduleName.getText(), ScheduleDate.getText(), ScheduleDescription.getText());
+            } catch (UsernameAlreadyExistException e) {
+                e.printStackTrace();
+            } catch (TaskExistAlreadyException e) {
+                e.printStackTrace();
+            }
+        }
     }
     public void handleClicks(ActionEvent actionEvent)  {
         if (actionEvent.getSource() == btnManageSchedules) {

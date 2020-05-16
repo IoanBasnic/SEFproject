@@ -18,9 +18,9 @@
                 <Insets left="10.0" />
             </HBox.margin>
         </ImageView>
-        <Label text="ScheduleName" textFill="#b7c3d7" />
-        <Label text="TypeSchedule" textFill="#b7c3d7"/>
-        <Label text="Date" textFill="#b7c3d7"/>
+        <Label fx:id="printName" text="ScheduleName" textFill="#b7c3d7" />
+        <Label fx:id="printType" text="TypeSchedule" textFill="#b7c3d7"/>
+        <Label fx:id="printDate" text="Date" textFill="#b7c3d7"/>
 
 
         <Button mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="View">
