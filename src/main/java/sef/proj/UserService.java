@@ -3,7 +3,6 @@ package sef.proj;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.FileUtils;
-import sef.proj.UsernameAlreadyExistException;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -17,7 +16,7 @@ import java.util.Objects;
 public class UserService {
 
     private static List<User> users;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("config", "users.json");
+    private static final Path USERS_PATH = FileSystemService.getPathToFile("users.json");
 
     public static void loadUsersFromFile() throws IOException {
 
@@ -42,6 +41,19 @@ public class UserService {
             if (Objects.equals(username, user.getUserName()))
                 throw new UsernameAlreadyExistException(username);
         }
+    }
+
+    public static String CheckUser(String username, String password)  {
+        for (User user : users) {
+            if (Objects.equals(username, user.getUserName()) ) {
+                if(user.getRole().equals("Manager"))
+                    return "ItsManager";
+                else
+                    return "ItsEmployee";
+            }
+
+        }
+        return "nothing";
     }
 
     private static void persistUsers() {

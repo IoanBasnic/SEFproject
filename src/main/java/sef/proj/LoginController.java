@@ -2,6 +2,8 @@
 package sef.proj;
 
 import com.jfoenix.controls.JFXButton;
+
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -78,6 +80,13 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        try {
+            UserService.loadUsersFromFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         s1.setVisible(false);
         s2.setVisible(false);
         signup.setVisible(false);
@@ -176,30 +185,67 @@ public class LoginController implements Initializable {
 
     @FXML
     private void btnsignup(MouseEvent event) {
-    }
+        if(event.getSource() == btnsignup_manager) {
 
-    @FXML
-    private void sign(MouseEvent event) {
+            try {
+                UserService.addUser(reg_user.getText(), reg_password.getText(), reg_email.getText(), reg_tag.getText(), reg_phone.getText(), "Manager");
+            } catch (UsernameAlreadyExistException e) {
+                e.printStackTrace();
+            }
 
+        }
+
+        if(event.getSource() == btnsignup_employee) {
+
+            try {
+                System.out.println(reg_user.getText() + reg_password.getText() + reg_email.getText() + reg_tag.getText() + reg_phone.getText() );
+               UserService.addUser(reg_user.getText(), reg_password.getText(), reg_email.getText(), reg_tag.getText(), reg_phone.getText(), "Employee");
+            } catch (UsernameAlreadyExistException e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 
     private Menu enterDataFrame;
     private MenuEmployee enterDataFrame2;
+    @FXML
+    private void sign(MouseEvent event) throws Exception {
+        if (event.getSource() == btnsignin) {
+            enterDataFrame = new Menu();
+            enterDataFrame2 = new MenuEmployee();
+
+
+            if(UserService.CheckUser(n1.getText(), n2.getText()).equals("ItsManager")) {
+                enterDataFrame.start();
+                Stage stage = (Stage) btnsignin.getScene().getWindow();
+                stage.close();
+            }
+
+            if(UserService.CheckUser(n1.getText(), n2.getText()).equals("ItsEmployee")) {
+                enterDataFrame2.start();
+                Stage stage = (Stage) btnsignin.getScene().getWindow();
+                stage.close();
+            }
+        }
+    }
+
     @FXML
     private void click(ActionEvent event) {
 
         if (event.getSource() == btnsignin) {
             enterDataFrame = new Menu();
             enterDataFrame2 = new MenuEmployee();
+            /*
             try {
 
-                if(n1.getText().equals("manager")) {
+                if(n1.getText().equals("manager-test")) {
                     enterDataFrame.start();
                     Stage stage = (Stage) btnsignin.getScene().getWindow();
                     stage.close();
                 }
 
-                if(n1.getText().equals("employee")) {
+                if(n1.getText().equals("employee-test")) {
                     enterDataFrame2.start();
                     Stage stage_employee = (Stage) btnsignin.getScene().getWindow();
                     stage_employee.close();
@@ -207,8 +253,10 @@ public class LoginController implements Initializable {
 
             } catch (Exception e) {
                 e.printStackTrace();
-            }
+            } */
         }
+
+
     }
 }
 
