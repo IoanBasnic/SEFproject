@@ -1,0 +1,36 @@
+Index: src/main/java/sef/proj/FileSystemService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package sef.proj;\r\n\r\nimport java.nio.file.Path;\r\nimport java.nio.file.Paths;\r\n\r\npublic class FileSystemService {\r\n /*name of the created folder */  private static final String APPLICATION_FOLDER = \".Schedule\";\r\n /* whew u find the folder  */   private static final String USER_FOLDER = System.getProperty(\"user.home\");\r\n    public static final Path APPLICATION_HOME_PATH = Paths.get(USER_FOLDER, APPLICATION_FOLDER);\r\n        /**/\r\n    public static Path getPathToFile(String... path) {\r\n        return APPLICATION_HOME_PATH.resolve(Paths.get(\".\", path));\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/sef/proj/FileSystemService.java	(revision 0e2b10984302f5195d19a7e71d1a10d184a5dc84)
++++ src/main/java/sef/proj/FileSystemService.java	(date 1589643652424)
+@@ -7,7 +7,7 @@
+  /*name of the created folder */  private static final String APPLICATION_FOLDER = ".Schedule";
+  /* whew u find the folder  */   private static final String USER_FOLDER = System.getProperty("user.home");
+     public static final Path APPLICATION_HOME_PATH = Paths.get(USER_FOLDER, APPLICATION_FOLDER);
+-        /**/
++
+     public static Path getPathToFile(String... path) {
+         return APPLICATION_HOME_PATH.resolve(Paths.get(".", path));
+     }
+Index: src/main/java/sef/proj/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package sef.proj;\r\n\r\npublic class User {\r\n\r\n    private String username;\r\n    private String password;\r\n    private String email;\r\n    private String tag;\r\n    private String phone_number;\r\n    private String role;\r\n\r\n    public User() {\r\n\r\n    }\r\n    public User(String username,String password,String email,String tag,String phone_number,String role){\r\n        this.username = username;\r\n        this.password = password;\r\n        this.email = email;\r\n        this.phone_number = phone_number;\r\n        this.tag = tag;\r\n        this.role = role;\r\n\r\n    }\r\n\r\n    public String getPhone_number() {\r\n        return phone_number;\r\n    }\r\n\r\n    public void setPhone_number(String phone_number) {\r\n        this.phone_number = phone_number;\r\n    }\r\n\r\n    public void setUserName(String username) {\r\n        this.username = username;\r\n    }\r\n\r\n    public  String getUserName() {\r\n        return username;\r\n    }\r\n\r\n    public String getPassword() {\r\n        return password;\r\n    }\r\n\r\n    public void setPassword(String password) {\r\n        this.password = password;\r\n    }\r\n    public String getEmail() {\r\n        return email;\r\n    }\r\n    public void setRole(String role) {\r\n        this.role = role;\r\n    }\r\n    public String getRole() {\r\n        return  role;\r\n    }\r\n\r\n    public String getTag() {\r\n\r\n        return  tag;\r\n    }\r\n    public boolean equals(Object o) {\r\n        if (this == o) return true;\r\n        if (o == null || getClass() != o.getClass()) return false;\r\n\r\n        User user = (User) o;\r\n\r\n        if (!username.equals(user.username)) return false;\r\n        if (!password.equals(user.password)) return false;\r\n        if (!email.equals(user.email)) return false;\r\n        if (!tag.equals(user.tag)) return false;\r\n        return role.equals(user.role);\r\n    }\r\n    public int hashCode() {\r\n        int result = username.hashCode();\r\n        result = 31 * result + password.hashCode();\r\n        result = 31 * result + tag.hashCode();\r\n        return result;\r\n    }\r\n    public String toString() {\r\n        return \"UserDTO{\" +\r\n                \"username='\" + username + '\\'' +\r\n                \", password='\" + password + '\\'' +\r\n                \", email='\" + email + '\\'' +\r\n                \", email='\" + phone_number + '\\'' +\r\n                \", tag='\" + tag + '\\'' +\r\n                \", role='\" + role + '\\'' +\r\n                '}';\r\n    }\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/sef/proj/User.java	(revision 0e2b10984302f5195d19a7e71d1a10d184a5dc84)
++++ src/main/java/sef/proj/User.java	(date 1589643652407)
+@@ -10,7 +10,7 @@
+     private String role;
+ 
+     public User() {
+-
++        
+     }
+     public User(String username,String password,String email,String tag,String phone_number,String role){
+         this.username = username;
