@@ -6,9 +6,6 @@ public class User {
     private String password;
     private String email;
     private String tag;
-
-
-
     private String phone_number;
     private String role;
 
@@ -84,7 +81,10 @@ public class User {
         return "UserDTO{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", role='" + tag + '\'' +
+                ", email='" + email + '\'' +
+                ", email='" + phone_number + '\'' +
+                ", tag='" + tag + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 
