@@ -46,6 +46,8 @@ public class MenuManagerController implements Initializable {
     @FXML
     private JFXButton viewEmployees;
 
+    @FXML
+    private JFXButton btnCreate;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -78,6 +80,11 @@ public class MenuManagerController implements Initializable {
 
     @FXML
     private void setViewEmployees(MouseEvent event) {
+
+    }
+
+    @FXML
+    private void btnCreateSchedule(MouseEvent event) {
 
     }
     public void handleClicks(ActionEvent actionEvent) {
