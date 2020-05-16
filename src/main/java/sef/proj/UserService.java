@@ -56,6 +56,16 @@ public class UserService {
         return "nothing";
     }
 
+    public static void ChangePassword(String username, String old_password, String new_password)  {
+        for (User user : users) {
+            if (Objects.equals(username, user.getUserName()) ) {
+                user.setPassword(new_password);
+            }
+
+        }
+
+    }
+
     private static void persistUsers() {
         try {
             ObjectMapper objectMapper = new ObjectMapper();

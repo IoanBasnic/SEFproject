@@ -1,4 +1,5 @@
 
+
 package sef.proj;
 
 import com.jfoenix.controls.JFXButton;
@@ -7,14 +8,22 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 
@@ -56,6 +65,8 @@ public class LoginController implements Initializable {
     @FXML
     private JFXButton btnsignin;
     @FXML
+    private JFXButton btnforgot;
+    @FXML
     private TextField reg_user;
     @FXML
     private TextField reg_email;
@@ -69,8 +80,7 @@ public class LoginController implements Initializable {
     private TextField n1;
     @FXML
     private TextField n2;
-    @FXML
-    private Label n3;
+
     @FXML
     private AnchorPane layer1;
     @FXML
@@ -93,9 +103,10 @@ public class LoginController implements Initializable {
         b1.setVisible(false);
         b2.setVisible(false);
         btnsignin.setVisible(false);
+        btnforgot.setVisible(false);
         n1.setVisible(false);
         n2.setVisible(false);
-        n3.setVisible(false);
+
         reg_user.setVisible(true);
         reg_email.setVisible(true);
         reg_password.setVisible(true);
@@ -120,6 +131,7 @@ public class LoginController implements Initializable {
         s1.setVisible(true);
         s2.setVisible(true);
         signup.setVisible(true);
+        btnforgot.setVisible(true);
         l1.setVisible(false);
         l2.setVisible(false);
         signin.setVisible(false);
@@ -129,7 +141,7 @@ public class LoginController implements Initializable {
         btnsignup_employee.setVisible(false);
         n1.setVisible(true);
         n2.setVisible(true);
-        n3.setVisible(true);
+
         reg_user.setVisible(false);
         reg_email.setVisible(false);
         reg_password.setVisible(false);
@@ -163,13 +175,14 @@ public class LoginController implements Initializable {
         l1.setVisible(true);
         l2.setVisible(true);
         signin.setVisible(true);
+        btnforgot.setVisible(false);
         a1.setVisible(true);
         a2.setVisible(true);
         btnsignup_manager.setVisible(true);
         btnsignup_employee.setVisible(true);
         n1.setVisible(false);
         n2.setVisible(false);
-        n3.setVisible(false);
+
         reg_user.setVisible(true);
         reg_email.setVisible(true);
         reg_password.setVisible(true);
@@ -198,8 +211,7 @@ public class LoginController implements Initializable {
         if(event.getSource() == btnsignup_employee) {
 
             try {
-                System.out.println(reg_user.getText() + reg_password.getText() + reg_email.getText() + reg_tag.getText() + reg_phone.getText() );
-               UserService.addUser(reg_user.getText(), reg_password.getText(), reg_email.getText(), reg_tag.getText(), reg_phone.getText(), "Employee");
+                UserService.addUser(reg_user.getText(), reg_password.getText(), reg_email.getText(), reg_tag.getText(), reg_phone.getText(), "Employee");
             } catch (UsernameAlreadyExistException e) {
                 e.printStackTrace();
             }
@@ -231,7 +243,7 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void click(ActionEvent event) {
+    private void click(ActionEvent event) throws Exception {
 
         if (event.getSource() == btnsignin) {
             enterDataFrame = new Menu();
@@ -256,7 +268,15 @@ public class LoginController implements Initializable {
             } */
         }
 
+        if(event.getSource() == btnforgot) {
+            Popup popup = new Popup();
+            popup.start();
+
+
+
+
+        }
+
 
     }
 }
-
