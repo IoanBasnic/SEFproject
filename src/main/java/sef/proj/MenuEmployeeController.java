@@ -33,7 +33,8 @@ public class MenuEmployeeController implements Initializable {
     @FXML
     private Button btnSignout;
 
-
+    @FXML
+    private JFXButton btnCreate;
 
     @FXML
     private Pane pnlCreateSchedule;
@@ -74,7 +75,7 @@ public class MenuEmployeeController implements Initializable {
 
 
     @FXML
-    private void setViewEmployees(MouseEvent event) {
+    private void btnCreateSchedule(MouseEvent event) {
 
     }
     public void handleClicks(ActionEvent actionEvent) {
