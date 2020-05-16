@@ -18,6 +18,7 @@ public class UserService {
 
     private static List<User> users;
     private static final Path USERS_PATH = FileSystemService.getPathToFile("users.json");
+    private static String getName;
 
     public static void loadUsersFromFile() throws IOException {
 
@@ -50,6 +51,7 @@ public class UserService {
     public static String CheckUser(String username, String password)  {
         for (User user : users) {
             if (Objects.equals(username, user.getUserName()) ) {
+                getName = username;
                 if(user.getRole().equals("Manager"))
                     return "ItsManager";
                 else
@@ -58,6 +60,10 @@ public class UserService {
 
         }
         return "nothing";
+    }
+
+    public static String getGetName() {
+        return getName;
     }
 
     public static void ChangePassword(String username, String old_password, String new_password)  {

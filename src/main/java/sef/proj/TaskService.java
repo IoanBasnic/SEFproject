@@ -46,6 +46,48 @@ public class TaskService extends UserService {
         return  false;
     }
 
+    public static String getName (int position){
+
+        int count = 0;
+        for (Task tsk : tasks) {
+           if( count == position) {
+               return tsk.getTitle();
+           }
+           count++;
+       }
+        return null;
+    }
+
+    public static String getDate (int position){
+
+        int count = 0;
+        for (Task tsk : tasks) {
+            if( count == position) {
+                return tsk.getTime();
+            }
+            count++;
+        }
+        return null;
+    }
+
+    public static String getDescription (int position){
+
+        int count = 0;
+        for (Task tsk : tasks) {
+            if( count == position) {
+                return tsk.getContent();
+            }
+            count++;
+        }
+        return null;
+    }
+
+    public static int getSize() {
+        if(tasks == null)
+            return 0;
+
+       return tasks.size();
+    }
     private static void checkTaskExistence(String Content) throws TaskExistAlreadyException {
         for (Task tsk : tasks) {
             if (Objects.equals(Content, tsk.getContent()))
