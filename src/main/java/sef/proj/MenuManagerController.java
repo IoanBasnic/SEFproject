@@ -23,6 +23,8 @@ public class MenuManagerController implements Initializable {
     @FXML
     private VBox pnItems = null;
     @FXML
+    private VBox pnItemsManage = null;
+    @FXML
     private Button btnViewSchedule;
 
     @FXML
@@ -55,12 +57,13 @@ public class MenuManagerController implements Initializable {
         pnlManageSchedule.setVisible(false);
 
         Node[] nodes = new Node[10];
+        Node[] nodes_2 = new Node[10];
         for (int i = 0; i < nodes.length; i++) {
             try {
 
                 final int j = i;
                 nodes[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/Schedules.fxml"));
-
+                nodes_2[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/SchedulesManage.fxml"));
                 //give the items some effect
 
                 nodes[i].setOnMouseEntered(event -> {
@@ -70,6 +73,14 @@ public class MenuManagerController implements Initializable {
                     nodes[j].setStyle("-fx-background-color : #02030A");
                 });
                 pnItems.getChildren().add(nodes[i]);
+
+                nodes_2[i].setOnMouseEntered(event -> {
+                    nodes_2[j].setStyle("-fx-background-color : #0A0E3F");
+                });
+                nodes_2[i].setOnMouseExited(event -> {
+                    nodes_2[j].setStyle("-fx-background-color : #02030A");
+                });
+                pnItemsManage.getChildren().add(nodes_2[i]);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -81,13 +92,22 @@ public class MenuManagerController implements Initializable {
     @FXML
     private void setViewEmployees(MouseEvent event) {
 
+        if(event.getSource() == btnViewSchedule) {
+            PopupEmployees popupEmployees = new PopupEmployees();
+            try {
+                popupEmployees.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 
     @FXML
     private void btnCreateSchedule(MouseEvent event) {
 
     }
-    public void handleClicks(ActionEvent actionEvent) {
+    public void handleClicks(ActionEvent actionEvent)  {
         if (actionEvent.getSource() == btnManageSchedules) {
 
             pnlManageSchedule.setVisible(true);
@@ -112,5 +132,7 @@ public class MenuManagerController implements Initializable {
             Stage stage = (Stage) btnSignout.getScene().getWindow();
             stage.close();
         }
+
+
     }
 }

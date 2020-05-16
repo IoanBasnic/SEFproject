@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sef.proj.PopupEmployeesController"
+            prefHeight="400.0" prefWidth="500.0"
+            style="-fx-background-color: #FFFFFF;">
+
+    <children>
+
+
+
+        <JFXButton fx:id="btnExit" layoutX="119.0" layoutY="338.0" onMouseClicked="#Exit" prefHeight="32.0" prefWidth="258.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="Exit" />
+
+    </children>
+</AnchorPane>
