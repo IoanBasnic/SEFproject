@@ -47,7 +47,8 @@ public class TaskService extends UserService {
     }
 
     public static String getName (int position){
-
+        if(TaskService.getSize() == 0)
+            return " ";
         int count = 0;
         for (Task tsk : tasks) {
            if( count == position) {
@@ -60,6 +61,8 @@ public class TaskService extends UserService {
 
     public static String getDate (int position){
 
+        if(TaskService.getSize() == 0)
+            return " ";
         int count = 0;
         for (Task tsk : tasks) {
             if( count == position) {
@@ -71,6 +74,9 @@ public class TaskService extends UserService {
     }
 
     public static String getDescription (int position){
+
+        if(TaskService.getSize() == 0)
+            return " ";
 
         int count = 0;
         for (Task tsk : tasks) {
