@@ -3,14 +3,14 @@
 
 Team of 2 - specification draft
 
-Team Members: **Achim-Balica Vasile, Bașnic Ioan **
+Team Members: **Achim-Balica Vasile, Bașnic Ioan**
 
 
 # General Description:
 
 This application aims to help both employees and companies by offering the possibility to schedule meetings, for both employee and company, and setting up a special date. For example: a deadline of a project.
 
-**Registration (for both Employee and Company): **
+**Registration (for both Employee and Company):**
 
 The user needs to first register into the application by selecting one of the 2 roles: employee or company. Both roles require a unique username, a password, a unique code, which represents the company and the basic information like full name / company name, address, phone number, current position etc.
 
@@ -37,11 +37,13 @@ Also, logged in employees can create a date schedule which is visible only for h
 </div>
 
 # How to use the app:
-
+* In directory `out` there is the .jar and the `run.bat`
+* The build is done using the JavaFX version 11.0.2 and JDK 11
+* To run the build, open `build.gradle`
 # Build with:
 * [JavaFx](https://en.wikipedia.org/wiki/JavaFX) - **JavaFx 11.0.2** - OpenJFX is an open source, next generation client application platform for desktop, mobile and embedded systems built on Java.
 * [Gradle](https://gradle.org) - is an open-source build automation system that builds upon the concepts of Apache Ant and Apache Maven and introduces a Groovy-based domain-specific language instead of the XML form used by Maven for declaring the project configuration.
-* [Build in IntelliJ IDEA ](https://www.jetbrains.com/idea/)
+* [Built-in with IntelliJ IDEA ](https://www.jetbrains.com/idea/)
 # Authors
 * **Bașnic Ioan** - XML/JavaFX Design - [GitHub Profile](https://github.com/IoanBasnic)
 * **Achim-Balica Vasile Adrian** - Database - [GitHub Profile](https://github.com/AdrianABV99)
