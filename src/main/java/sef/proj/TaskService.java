@@ -13,7 +13,7 @@ import java.util.Objects;
 public class TaskService extends UserService {
 
     private static List<Task> tasks;
-    private  static final Path TASK_PATH = FileSystemService.getPathToFile("toDo","tasks.json");
+    private  static final Path TASK_PATH = FileSystemService.getPathToFile("ToDo", "tasks.json");
 
     public static void loadTaskFromFile() throws IOException {
 

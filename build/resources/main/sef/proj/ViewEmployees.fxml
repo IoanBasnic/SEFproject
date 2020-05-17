@@ -12,6 +12,7 @@
     <children>
 
         <Label text="EmployeeName" textFill="#b7c3d7" />
+        <Label text="Email" textFill="#b7c3d7"/>
         <Label text="TAG" textFill="#b7c3d7"/>
 
     </children>

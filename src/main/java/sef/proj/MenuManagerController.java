@@ -82,7 +82,7 @@ public class MenuManagerController implements Initializable {
         pnlManageSchedule.setVisible(false);
 
         try {
-            TaskService.loadUsersFromFile();
+            TaskService.loadTaskFromFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -95,7 +95,7 @@ public class MenuManagerController implements Initializable {
 
                 final int j = i;
                 nodes[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/Schedules.fxml"));
-              //  nodes_2[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/SchedulesManage.fxml"));
+               // nodes_2[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/SchedulesManage.fxml"));
 
                 if(TaskService.checkUser(UserService.getGetName())) {
 
@@ -149,6 +149,7 @@ public class MenuManagerController implements Initializable {
 
         if(event.getSource() == btnCreate) {
             try {
+
                 TaskService.addTask(UserService.getGetName(), ScheduleName.getText(), ScheduleDate.getText(), ScheduleDescription.getText());
             } catch (UsernameAlreadyExistException e) {
                 e.printStackTrace();
