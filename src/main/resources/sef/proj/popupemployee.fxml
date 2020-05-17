@@ -8,6 +8,7 @@
 
 <?import javafx.scene.text.Font?>
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="sef.proj.PopupEmployeesController"
@@ -16,7 +17,15 @@
 
     <children>
 
-
+        <ScrollPane layoutX="10" layoutY="10" prefHeight="300.0" prefWidth="480.0" stylesheets="@style.css">
+            <content>
+                <VBox fx:id="EmployeesItem" prefHeight="318.0" prefWidth="480.0" spacing="5.0" style="-fx-background-color: #02030A;">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
 
         <JFXButton fx:id="btnExit" layoutX="119.0" layoutY="338.0" onMouseClicked="#Exit" prefHeight="32.0" prefWidth="258.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="Exit" />
 

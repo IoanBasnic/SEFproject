@@ -57,15 +57,6 @@ public class MenuManagerController implements Initializable {
     private Label username;
 
     @FXML
-    private Label printName;
-
-    @FXML
-    private Label printDate;
-
-    @FXML
-    private Label printType;
-
-    @FXML
     private TextField ScheduleName;
 
     @FXML
@@ -82,7 +73,7 @@ public class MenuManagerController implements Initializable {
         pnlManageSchedule.setVisible(false);
 
         try {
-            TaskService.loadUsersFromFile();
+            TaskService.loadTaskFromFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -95,19 +86,22 @@ public class MenuManagerController implements Initializable {
 
                 final int j = i;
                 nodes[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/Schedules.fxml"));
-              //  nodes_2[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/SchedulesManage.fxml"));
+                nodes_2[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/SchedulesManage.fxml"));
+
 
                 if(TaskService.checkUser(UserService.getGetName())) {
 
-                    printName.setText(TaskService.getName(i));
-                    printDate.setText(TaskService.getDate(i));
-                    printType.setText(TaskService.getDescription(i));
+                 //   printName.setText(TaskService.getName(i));
+                  //  printDate.setText(TaskService.getDate(i));
+                  //  printType.setText(TaskService.getDescription(i));
+
                     nodes[i].setOnMouseEntered(event -> {
                         nodes[j].setStyle("-fx-background-color : #0A0E3F");
                     });
                     nodes[i].setOnMouseExited(event -> {
                         nodes[j].setStyle("-fx-background-color : #02030A");
                     });
+
 
                     pnItems.getChildren().add(nodes[i]);
 
@@ -149,6 +143,7 @@ public class MenuManagerController implements Initializable {
 
         if(event.getSource() == btnCreate) {
             try {
+
                 TaskService.addTask(UserService.getGetName(), ScheduleName.getText(), ScheduleDate.getText(), ScheduleDescription.getText());
             } catch (UsernameAlreadyExistException e) {
                 e.printStackTrace();

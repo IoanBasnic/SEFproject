@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -42,13 +43,24 @@ public class MenuEmployeeController implements Initializable {
     @FXML
     private Pane pnlOverview;
 
+    @FXML
+    private TextField ScheduleName;
 
+    @FXML
+    private TextField ScheduleDate;
+
+    @FXML
+    private TextField ScheduleDescription;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         pnlCreateSchedule.setVisible(false);
-
+        try {
+            TaskService.loadTaskFromFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         Node[] nodes = new Node[10];
         for (int i = 0; i < nodes.length; i++) {
@@ -76,7 +88,16 @@ public class MenuEmployeeController implements Initializable {
 
     @FXML
     private void btnCreateSchedule(MouseEvent event) {
+        if(event.getSource() == btnCreate) {
+            try {
 
+                TaskService.addTask(UserService.getGetName(), ScheduleName.getText(), ScheduleDate.getText(), ScheduleDescription.getText());
+            } catch (UsernameAlreadyExistException e) {
+                e.printStackTrace();
+            } catch (TaskExistAlreadyException e) {
+                e.printStackTrace();
+            }
+        }
     }
     public void handleClicks(ActionEvent actionEvent) {
 
