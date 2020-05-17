@@ -52,7 +52,7 @@
                         </Label>
                         <JFXButton fx:id="btnsignin" layoutX="189.0" layoutY="375.0" onAction="#click" onMouseClicked="#sign" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="SIGN IN" />
                         <TextField fx:id="n1" layoutX="119.0" layoutY="218.0" prefHeight="32.0" prefWidth="258.0" promptText="Username" />
-                        <JFXButton fx:id="btnforgot" layoutX="115.0" layoutY="323.0"  onMouseClicked="#click" prefHeight="32.0" prefWidth="258.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="Forgot my password" />
+                        <JFXButton fx:id="btnforgot" layoutX="115.0" layoutY="323.0"  onMouseClicked="#btnForgot" prefHeight="32.0" prefWidth="258.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="Forgot my password" />
 
 
                         <PasswordField fx:id="n2" layoutX="119.0" layoutY="268.0" prefHeight="32.0" prefWidth="258.0" promptText="password" />

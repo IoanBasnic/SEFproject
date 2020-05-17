@@ -195,6 +195,18 @@ public class LoginController implements Initializable {
 
         }));
     }
+    @FXML
+    private void btnForgot(MouseEvent event) {
+        if(event.getSource() == btnforgot) {
+            Popup popup = new Popup();
+            try {
+                popup.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
 
     @FXML
     private void btnsignup(MouseEvent event) {
@@ -266,15 +278,6 @@ public class LoginController implements Initializable {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-
-        if(event.getSource() == btnforgot) {
-            Popup popup = new Popup();
-            popup.start();
-
-
-
-
         }
 
 

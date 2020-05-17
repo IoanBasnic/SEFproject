@@ -2,9 +2,12 @@ package sef.proj;
 
 import com.jfoenix.controls.JFXButton;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,7 +16,8 @@ import java.util.ResourceBundle;
 
 public class PopupEmployeesController implements Initializable {
 
-
+    @FXML
+    private VBox EmployeesItem = null;
     @FXML
     private JFXButton btnExit;
     @FXML
@@ -31,6 +35,27 @@ public class PopupEmployeesController implements Initializable {
             UserService.loadUsersFromFile();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+
+        Node[] nodes = new Node[10];
+        for (int i = 0; i < nodes.length; i++) {
+            try {
+
+                final int j = i;
+                nodes[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/ViewEmployees.fxml"));
+
+                //give the items some effect
+
+                nodes[i].setOnMouseEntered(event -> {
+                    nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                });
+                nodes[i].setOnMouseExited(event -> {
+                    nodes[j].setStyle("-fx-background-color : #02030A");
+                });
+                EmployeesItem.getChildren().add(nodes[i]);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
