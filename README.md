@@ -3,26 +3,26 @@
 
 Team of 2 - specification draft
 
-Team Members: Achim-Balica Vasile, Bașnic Ioan
+Team Members: **Achim-Balica Vasile, Bașnic Ioan **
 
 
 # General Description:
 
 This application aims to help both employees and companies by offering the possibility to schedule meetings, for both employee and company, and setting up a special date. For example: a deadline of a project.
 
-Registration (for both Employee and Company):
+**Registration (for both Employee and Company): **
 
 The user needs to first register into the application by selecting one of the 2 roles: employee or company. Both roles require a unique username, a password, a unique code, which represents the company and the basic information like full name / company name, address, phone number, current position etc.
 
 # Manager:
 
-After the Company manager logs in, he can add, edit or delete a date schedule on his calendar. A date schedule should contain its name, description and optionally a picture.
+After the Company **manager** logs in, he can add, edit or delete a date schedule on his calendar. A date schedule should contain its name, description and optionally a picture.
 
 Also, after logging in, he can set a date schedule to be visible, private or depending on the employee position to be visible.
 
-#Employee:
+# Employee:
 
-A customer needs to login into the application where he will be able to see the date schedules in his calendar. The calendar should be searchable by using GUI or searching the date.
+An **employee** needs to login into the application where he will be able to see the date schedules in his schedule. The calendar should be searchable by using GUI or searching the date.
 
 A logged in employee can also see a date schedule of a specific for him or the position he has.
 
@@ -40,8 +40,8 @@ Also, logged in employees can create a date schedule which is visible only for h
 
 # Build with:
 * [JavaFx](https://en.wikipedia.org/wiki/JavaFX) - **JavaFx 11.0.2** - OpenJFX is an open source, next generation client application platform for desktop, mobile and embedded systems built on Java.
-* [Gradle](https://gradle.org) - 
-* Build in Intellij 
-#Authors
-* **Bașnic Ioan**  - [GitHub Profile](https://github.com/IoanBasnic)
-* **Achim-Balica Vasile Adrian** - [GitHub Profile](https://github.com/AdrianABV99)
+* [Gradle](https://gradle.org) - is an open-source build automation system that builds upon the concepts of Apache Ant and Apache Maven and introduces a Groovy-based domain-specific language instead of the XML form used by Maven for declaring the project configuration.
+* [Build in IntelliJ IDEA ](https://www.jetbrains.com/idea/)
+# Authors
+* **Bașnic Ioan** - XML/JavaFX Design - [GitHub Profile](https://github.com/IoanBasnic)
+* **Achim-Balica Vasile Adrian** - Database - [GitHub Profile](https://github.com/AdrianABV99)
