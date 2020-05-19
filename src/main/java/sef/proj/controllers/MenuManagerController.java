@@ -179,12 +179,14 @@ public class MenuManagerController implements Initializable {
             pnlManageSchedule.setVisible(true);
             pnlManageSchedule.setStyle("-fx-background-color : #FFFFFF");
             pnlManageSchedule.toFront();
+            generate();
         }
 
         if (actionEvent.getSource() == btnViewSchedule) {
 
             pnlOverview.setStyle("-fx-background-color : #FFFFFF");
             pnlOverview.toFront();
+            generate();
         }
         if(actionEvent.getSource() == btnCreateSchedule)
         {
@@ -200,5 +202,54 @@ public class MenuManagerController implements Initializable {
         }
 
 
+    }
+
+    private void generate() {
+        Node[] nodes = new Node[10];
+        Node[] nodes_2 = new Node[10];
+        for (int i = 0; i < TaskService.getSize(); i++) {
+            try {
+
+                final int j = i;
+                nodes[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/Schedules.fxml"));
+                nodes_2[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/SchedulesManage.fxml"));
+
+
+                if(TaskService.checkUser(UserService.getGetName())) {
+
+
+                    printName.setText(TaskService.getName(i));
+                    printDate.setText(TaskService.getDate(i));
+                    printType.setText(TaskService.getDescription(i));
+
+                    printNameMan.setText(TaskService.getName(i));
+                    printDateMan.setText(TaskService.getDate(i));
+                    printTypeMan.setText(TaskService.getDescription(i));
+
+                    nodes[i].setOnMouseEntered(event -> {
+                        nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                    });
+                    nodes[i].setOnMouseExited(event -> {
+                        nodes[j].setStyle("-fx-background-color : #02030A");
+                    });
+
+
+                    //      pnItems.getChildren().add(nodes[i]);
+
+                    nodes_2[i].setOnMouseEntered(event -> {
+                        nodes_2[j].setStyle("-fx-background-color : #0A0E3F");
+                    });
+                    nodes_2[i].setOnMouseExited(event -> {
+                        nodes_2[j].setStyle("-fx-background-color : #02030A");
+                    });
+                    //     pnItemsManage.getChildren().add(nodes_2[i]);
+                }
+
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
