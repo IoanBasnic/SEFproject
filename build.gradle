@@ -33,7 +33,7 @@ dependencies {
 sourceSets {
     main {
         java {
-            srcDir 'src'
+            srcDir 'src.main.test.java.sef.proj'
         }
     }
 }

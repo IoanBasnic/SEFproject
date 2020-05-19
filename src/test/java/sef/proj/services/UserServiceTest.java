@@ -1,28 +1,25 @@
 package sef.proj.services;
 
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.Assert;
 import org.junit.Test;
-import sef.proj.model.User;
-import sef.proj.services.UserService;
 
-class UserServiceTest {
+import static org.junit.Assert.*;
+
+public class UserServiceTest {
+
 
     @Test
-    void nameUserTest() {
-        UserService test = new UserService();
+    public void testName() {
 
-        for (User name : test.getUsers()){
-            Assert.assertEquals(name.getUserName().matches("^[\\\\p{L} .'-]+$"),name.getUserName());
-        }
+        String s  = "Adrian Achim";
+        Assert.assertTrue(s.matches("^[A-Za-z]+.[A-Za-z]+$"));
     }
 
     @Test
-    void tagTest() {
-        UserService test = new UserService();
+    public void testTag() {
 
-        for (User tag : test.getUsers()) {
-            Assert.assertEquals(tag.getUserName().matches("(([01]?[0-9]):([0-5][0-9]) ([AaPp][Mm]))"),tag.getTag());
-        }
+        String s = "G37R3K7N008";
+        Assert.assertTrue(s.matches("[A-Za-z0-9]+"));
     }
+
 }
