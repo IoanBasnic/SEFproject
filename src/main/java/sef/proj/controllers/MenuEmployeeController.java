@@ -57,6 +57,8 @@ public class MenuEmployeeController implements Initializable {
     private TextField ScheduleDescription;
 
     @FXML
+    private Label username;
+    @FXML
     private Label printName;
     @FXML
     private Label printDate;
@@ -73,6 +75,7 @@ public class MenuEmployeeController implements Initializable {
             e.printStackTrace();
         }
 
+        username.setText("Hello, "+ UserService.getGetName());
         Node[] nodes = new Node[10];
         for (int i = 0; i < TaskService.getSize(); i++) {
             try {
