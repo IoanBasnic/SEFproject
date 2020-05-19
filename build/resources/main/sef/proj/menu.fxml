@@ -145,7 +145,7 @@
                                                     <Insets />
                                                 </HBox.margin>
                                             </Button>
-                                            <Button mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="Delete">
+                                            <Button fx:id="btndelete" onMouseClicked="#btnDelete" mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="Delete">
                                                 <HBox.margin>
                                                     <Insets />
                                                 </HBox.margin>
