@@ -93,6 +93,54 @@ public class UserService {
         }
     }
 
+    public static String getName (int position){
+        if(TaskService.getSize() == 0)
+            return " ";
+        int count = 0;
+        for (User usr : users) {
+            if( count == position) {
+                return usr.getUserName();
+            }
+            count++;
+        }
+        return null;
+    }
+
+    public static String getEmail (int position){
+
+        if(TaskService.getSize() == 0)
+            return " ";
+        int count = 0;
+        for (User usr : users) {
+            if( count == position) {
+                return usr.getEmail();
+            }
+            count++;
+        }
+        return null;
+    }
+
+    public static String getTag (int position){
+
+        if(TaskService.getSize() == 0)
+            return " ";
+
+        int count = 0;
+        for (User usr : users) {
+            if( count == position) {
+                return usr.getTag();
+            }
+            count++;
+        }
+        return null;
+    }
+
+    public static int getSize() {
+        if(users == null)
+            return 0;
+
+        return users.size();
+    }
     private static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));

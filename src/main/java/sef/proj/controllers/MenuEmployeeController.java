@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -55,6 +56,13 @@ public class MenuEmployeeController implements Initializable {
     @FXML
     private TextField ScheduleDescription;
 
+    @FXML
+    private Label printName;
+    @FXML
+    private Label printDate;
+    @FXML
+    private Label printType;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -66,7 +74,7 @@ public class MenuEmployeeController implements Initializable {
         }
 
         Node[] nodes = new Node[10];
-        for (int i = 0; i < nodes.length; i++) {
+        for (int i = 0; i < TaskService.getSize(); i++) {
             try {
 
                 final int j = i;
@@ -74,13 +82,22 @@ public class MenuEmployeeController implements Initializable {
 
                 //give the items some effect
 
-                nodes[i].setOnMouseEntered(event -> {
-                    nodes[j].setStyle("-fx-background-color : #0A0E3F");
-                });
-                nodes[i].setOnMouseExited(event -> {
-                    nodes[j].setStyle("-fx-background-color : #02030A");
-                });
-                pnItems.getChildren().add(nodes[i]);
+                if(TaskService.checkUser(UserService.getGetName())) {
+
+
+                    printName.setText(TaskService.getName(i));
+                    printDate.setText(TaskService.getDate(i));
+                    printType.setText(TaskService.getDescription(i));
+
+                    nodes[i].setOnMouseEntered(event -> {
+                        nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                    });
+                    nodes[i].setOnMouseExited(event -> {
+                        nodes[j].setStyle("-fx-background-color : #02030A");
+                    });
+
+                    //      pnItems.getChildren().add(nodes[i]);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -109,6 +126,7 @@ public class MenuEmployeeController implements Initializable {
 
             pnlOverview.setStyle("-fx-background-color : #FFFFFF");
             pnlOverview.toFront();
+            generate();
         }
         if(actionEvent.getSource() == btnCreateSchedule)
         {
@@ -121,6 +139,38 @@ public class MenuEmployeeController implements Initializable {
         {
             Stage stage = (Stage) btnSignout.getScene().getWindow();
             stage.close();
+        }
+    }
+
+    private void generate() {
+        Node[] nodes = new Node[10];
+        for (int i = 0; i < TaskService.getSize(); i++) {
+            try {
+
+                final int j = i;
+                nodes[i] = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/Schedules.fxml"));
+
+                //give the items some effect
+
+                if(TaskService.checkUser(UserService.getGetName())) {
+
+
+                    printName.setText(TaskService.getName(i));
+                    printDate.setText(TaskService.getDate(i));
+                    printType.setText(TaskService.getDescription(i));
+
+                    nodes[i].setOnMouseEntered(event -> {
+                        nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                    });
+                    nodes[i].setOnMouseExited(event -> {
+                        nodes[j].setStyle("-fx-background-color : #02030A");
+                    });
+
+                    //      pnItems.getChildren().add(nodes[i]);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
