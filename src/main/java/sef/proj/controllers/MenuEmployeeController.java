@@ -94,12 +94,20 @@ public class MenuEmployeeController implements Initializable {
 
                     nodes[i].setOnMouseEntered(event -> {
                         nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                        printName.setText(TaskService.getName(j));
+                        printDate.setText(TaskService.getDate(j));
+                        printType.setText(TaskService.getDescription(j));
+
                     });
                     nodes[i].setOnMouseExited(event -> {
                         nodes[j].setStyle("-fx-background-color : #02030A");
+                        printName.setText(TaskService.getName(j));
+                        printDate.setText(TaskService.getDate(j));
+                        printType.setText(TaskService.getDescription(j));
+
                     });
 
-                    //      pnItems.getChildren().add(nodes[i]);
+                         pnItems.getChildren().add(nodes[i]);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
