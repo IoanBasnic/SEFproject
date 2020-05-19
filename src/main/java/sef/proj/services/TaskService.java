@@ -32,14 +32,14 @@ public class TaskService extends UserService {
         });
     }
 
-    public static boolean addTask(String username, String title, String Content,String time) throws UsernameAlreadyExistException, TaskExistAlreadyException {
-        if ( checkUser(username) && time.matches("((1[0-2]|0?[1-9]):([0-5][0-9]) ([AaPp][Mm]))")) {
+    public static void addTask(String username, String title, String Content,String time) throws UsernameAlreadyExistException, TaskExistAlreadyException {
+       // if ( checkUser(username) && time.matches("((1[0-2]|0?[1-9]):([0-5][0-9]) ([AaPp][Mm]))")) {
             checkTaskExistence(Content);
             tasks.add(new Task(username, title, Content, time));
             persistTask();
-            return  true;
-        }
-        return false;
+        //    return  true;
+       // }
+      //  return false;
     }
 
     public static boolean checkUser (String username){

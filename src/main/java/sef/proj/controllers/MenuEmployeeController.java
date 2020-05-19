@@ -57,6 +57,8 @@ public class MenuEmployeeController implements Initializable {
     private TextField ScheduleDescription;
 
     @FXML
+    private Label username;
+    @FXML
     private Label printName;
     @FXML
     private Label printDate;
@@ -73,6 +75,7 @@ public class MenuEmployeeController implements Initializable {
             e.printStackTrace();
         }
 
+        username.setText("Hello, "+ UserService.getGetName());
         Node[] nodes = new Node[10];
         for (int i = 0; i < TaskService.getSize(); i++) {
             try {
@@ -91,12 +94,20 @@ public class MenuEmployeeController implements Initializable {
 
                     nodes[i].setOnMouseEntered(event -> {
                         nodes[j].setStyle("-fx-background-color : #0A0E3F");
+                        printName.setText(TaskService.getName(j));
+                        printDate.setText(TaskService.getDate(j));
+                        printType.setText(TaskService.getDescription(j));
+
                     });
                     nodes[i].setOnMouseExited(event -> {
                         nodes[j].setStyle("-fx-background-color : #02030A");
+                        printName.setText(TaskService.getName(j));
+                        printDate.setText(TaskService.getDate(j));
+                        printType.setText(TaskService.getDescription(j));
+
                     });
 
-                    //      pnItems.getChildren().add(nodes[i]);
+                         pnItems.getChildren().add(nodes[i]);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
