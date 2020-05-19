@@ -140,7 +140,7 @@
                                             <Label fx:id="printDateMan" text="Date" textFill="#b7c3d7"/>
 
 
-                                            <Button mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="Edit">
+                                            <Button fx:id="btnedit" onMouseClicked="#btnEdit" mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="Edit">
                                                 <HBox.margin>
                                                     <Insets />
                                                 </HBox.margin>
@@ -255,7 +255,7 @@
                                             <Label fx:id="printDate" text="Date" textFill="#b7c3d7"/>
 
 
-                                            <Button mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="View">
+                                            <Button fx:id="btnview" onMouseClicked="#btnView" mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="View">
                                                 <HBox.margin>
                                                     <Insets />
                                                 </HBox.margin>

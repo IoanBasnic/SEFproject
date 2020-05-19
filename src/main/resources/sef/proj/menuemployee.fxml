@@ -175,7 +175,7 @@
                                             <Label fx:id="printDate" text="Date" textFill="#b7c3d7"/>
 
 
-                                            <Button mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="View">
+                                            <Button fx:id="btnView" mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="View">
                                                 <HBox.margin>
                                                     <Insets />
                                                 </HBox.margin>

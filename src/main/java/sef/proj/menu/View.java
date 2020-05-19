@@ -12,7 +12,7 @@ public class View extends Application {
     private double x, y;
 
     public void start() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/popupemployee.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("sef/proj/view.fxml"));
         Stage primaryStage = new Stage();
         primaryStage.setScene(new Scene(root));
         //set stage borderless

@@ -16,7 +16,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sef.proj.exceptions.TaskExistAlreadyException;
 import sef.proj.exceptions.UsernameAlreadyExistException;
+import sef.proj.menu.Edit;
+import sef.proj.menu.Popup;
 import sef.proj.menu.PopupEmployees;
+import sef.proj.menu.View;
 import sef.proj.services.TaskService;
 import sef.proj.services.UserService;
 
@@ -81,7 +84,10 @@ public class MenuManagerController implements Initializable {
     private Label printDateMan;
     @FXML
     private Label printTypeMan;
-
+    @FXML
+    private Button btnview;
+    @FXML
+    private Button btnedit;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -144,6 +150,31 @@ public class MenuManagerController implements Initializable {
 
     }
 
+    @FXML
+    private void btnView(MouseEvent event) {
+        if(event.getSource() == btnview) {
+            View view = new View();
+            try {
+                view.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    @FXML
+    private void btnEdit(MouseEvent event) {
+        if(event.getSource() == btnedit) {
+            Edit edit = new Edit();
+            try {
+                edit.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
 
     @FXML
     private void setViewEmployees(MouseEvent event) {
