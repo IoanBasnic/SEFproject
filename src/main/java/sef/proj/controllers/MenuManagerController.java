@@ -69,6 +69,18 @@ public class MenuManagerController implements Initializable {
     @FXML
     private TextField ScheduleDescription;
 
+    @FXML
+    private Label printName;
+    @FXML
+    private Label printDate;
+    @FXML
+    private Label printType;
+    @FXML
+    private Label printNameMan;
+    @FXML
+    private Label printDateMan;
+    @FXML
+    private Label printTypeMan;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -95,9 +107,14 @@ public class MenuManagerController implements Initializable {
 
                 if(TaskService.checkUser(UserService.getGetName())) {
 
-                 //   printName.setText(TaskService.getName(i));
-                  //  printDate.setText(TaskService.getDate(i));
-                  //  printType.setText(TaskService.getDescription(i));
+
+                    printName.setText(TaskService.getName(i));
+                    printDate.setText(TaskService.getDate(i));
+                    printType.setText(TaskService.getDescription(i));
+
+                    printNameMan.setText(TaskService.getName(i));
+                    printDateMan.setText(TaskService.getDate(i));
+                    printTypeMan.setText(TaskService.getDescription(i));
 
                     nodes[i].setOnMouseEntered(event -> {
                         nodes[j].setStyle("-fx-background-color : #0A0E3F");
@@ -107,7 +124,7 @@ public class MenuManagerController implements Initializable {
                     });
 
 
-                    pnItems.getChildren().add(nodes[i]);
+              //      pnItems.getChildren().add(nodes[i]);
 
                     nodes_2[i].setOnMouseEntered(event -> {
                         nodes_2[j].setStyle("-fx-background-color : #0A0E3F");
@@ -115,7 +132,7 @@ public class MenuManagerController implements Initializable {
                     nodes_2[i].setOnMouseExited(event -> {
                         nodes_2[j].setStyle("-fx-background-color : #02030A");
                     });
-                    pnItemsManage.getChildren().add(nodes_2[i]);
+               //     pnItemsManage.getChildren().add(nodes_2[i]);
                 }
 
 
