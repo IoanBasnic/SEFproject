@@ -37,12 +37,21 @@ sourceSets {
         }
     }
 }
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'sef.prof.FakeMain'
+        )
+    }
+}
 apply plugin: 'java'
 
 repositories { jcenter() }
 dependencies {
     testCompile 'junit:junit:4.12'
-    compile 'junit:junit:4.12'
+   // compile 'junit:junit:4.12'
 }
 
 javafx {

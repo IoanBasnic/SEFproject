@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sef.proj.controllers.EditController"
+            prefHeight="400.0" prefWidth="500.0"
+            style="-fx-background-color: #FFFFFF;">
+
+    <children>
+
+        <Label layoutX="119.0" layoutY="25.0" text="Change schedule" textFill="#300d33">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <TextField fx:id="user" layoutX="119.0" layoutY="138.0" prefHeight="32.0" prefWidth="258.0" promptText="New Schedule Name" />
+        <TextField fx:id="old_pass" layoutX="119.0" layoutY="188.0" prefHeight="32.0" prefWidth="258.0" promptText="New Date" />
+        <TextField fx:id="new_pass" layoutX="119.0" layoutY="238.0" prefHeight="32.0" prefWidth="258.0" promptText="New Description" />
+        <JFXButton fx:id="btnChangePass" layoutX="119.0" layoutY="338.0" onMouseClicked="#ChangeDesc" prefHeight="32.0" prefWidth="258.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="Change schedule" />
+
+    </children>
+</AnchorPane>

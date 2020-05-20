@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.effect.DropShadow?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="sef.proj.controllers.PopupEmployeesController"
+            prefHeight="400.0" prefWidth="500.0"
+            style="-fx-background-color: #FFFFFF;">
+
+    <children>
+
+        <ScrollPane layoutX="10" layoutY="10" prefHeight="300.0" prefWidth="480.0" stylesheets="@style.css">
+            <content>
+                <VBox fx:id="EmployeesItem" prefHeight="318.0" prefWidth="480.0" spacing="5.0" style="-fx-background-color: #02030A;">
+                    <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </padding>
+
+                    <HBox fx:id="itemC" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="80.0" style="-fx-background-color: #02030A; -fx-background-radius: 5; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+                        <children>
+
+                            <Label fx:id="name" text="EmployeeName" textFill="#b7c3d7" />
+                            <Label fx:id="email" text="Email" textFill="#b7c3d7"/>
+                            <Label fx:id="tag" text="TAG" textFill="#b7c3d7"/>
+
+                        </children>
+                        <effect>
+                            <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+                        </effect>
+                    </HBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+
+        <JFXButton fx:id="btnExit" layoutX="119.0" layoutY="338.0" onMouseClicked="#Exit" prefHeight="32.0" prefWidth="258.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="Exit" />
+
+    </children>
+</AnchorPane>

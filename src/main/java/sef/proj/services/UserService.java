@@ -40,7 +40,7 @@ public class UserService {
 
     public static boolean addUser(String username, String password, String email,String tag,String phone_number,String role) throws UsernameAlreadyExistException {
 
-        if ( username.matches("^[A-Za-z]+.[A-Za-z]+$") && tag.matches("[^a-zA-Z0-9]")) {
+        if ( username.matches("^[A-Za-z]+.[A-Za-z]+$") && tag.matches("[a-zA-Z0-9]+")) {
             checkUserDoesNotAlreadyExist(username);
             users.add(new User(username, encodePassword(username, password), email, tag, phone_number, role));
             persistUsers();

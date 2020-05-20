@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="1050.0" style="-fx-background-color: #02030A;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sef.proj.controllers.MenuManagerController">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="576.0" prefWidth="256.0" style="-fx-background-color: #300d33;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <ImageView fitHeight="73.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="/images/icons8-person-calendar-32.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets bottom="10.0" top="50.0" />
+                    </VBox.margin></ImageView>
+                <Label fx:id="username" text="Username" textFill="#FFFFFF">
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </Label>
+                <Button fx:id="btnViewSchedule" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="View Schedules" textFill="#e7e5e5">
+                    <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/icons8-date-to-32.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="btnCreateSchedule" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Create schedule">
+                    <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/icons8-edit-calendar-32.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="btnManageSchedules" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Manage Schedules">
+                    <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/icons8-view-schedule-32.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+
+                <Button fx:id="btnSignout" cancelButton="true" onAction="#handleClicks" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="259.0" stylesheets="@style.css" text="Sign Out">
+                    <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="/images/icons8-sign-out-32.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+            </children>
+        </VBox>
+        <StackPane layoutX="258.0" prefHeight="576.0" prefWidth="793.0" style="-fx-background-color: #FFFFFF;">
+            <children>
+                <Pane fx:id="pnlManageSchedule" prefHeight="200.0" prefWidth="200.0" >
+                    <children>
+
+                        <Label layoutX="57.0" layoutY="25.0" text="Schedule Application - Manage Schedules" textFill="#300d33">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+
+                        <Label layoutX="57.0" layoutY="100.0" text="View employees" textFill="#300d33">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <JFXButton fx:id="viewEmployees" layoutX="220.0" layoutY="100.0"  onMouseClicked="#setViewEmployees" prefHeight="32.0" prefWidth="118.0" style="-fx-background-color: #300d33; -fx-background-radius: 200; -fx-text-fill: white;" text="VIEW" />
+
+                        <HBox alignment="CENTER_LEFT" layoutX="45.0" layoutY="178.0" prefHeight="42.0" prefWidth="712.0" spacing="80.0" style="-fx-background-color: #FFFFFF;">
+                            <children>
+                                <Label text="Schedule Name" textFill="#300d33">
+                                    <HBox.margin>
+                                        <Insets left="10.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <Label text="Type" textFill="#300d33">
+                                    <HBox.margin>
+                                        <Insets left="50.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <Label text="Date" textFill="#300d33">
+                                    <HBox.margin>
+                                        <Insets left="50.0" />
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <ScrollPane layoutX="14.0" layoutY="232.0" prefHeight="320.0" prefWidth="746.0" stylesheets="@style.css">
+                            <content>
+                                <VBox fx:id="pnItemsManage" prefHeight="318.0" prefWidth="744.0" spacing="5.0" style="-fx-background-color: #02030A;">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                    <HBox fx:id="itemManage" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="80.0" style="-fx-background-color: #02030A; -fx-background-radius: 5; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+                                        <children>
+
+                                            <Label fx:id="printNameMan" text="ScheduleName" textFill="#b7c3d7" />
+                                            <Label fx:id="printTypeMan" text="TypeSchedule" textFill="#b7c3d7"/>
+                                            <Label fx:id="printDateMan" text="Date" textFill="#b7c3d7"/>
+
+
+                                            <Button fx:id="btnedit" onMouseClicked="#btnEdit" mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="Edit">
+                                                <HBox.margin>
+                                                    <Insets />
+                                                </HBox.margin>
+                                            </Button>
+                                            <Button fx:id="btndelete" onMouseClicked="#btnDelete" mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="Delete">
+                                                <HBox.margin>
+                                                    <Insets />
+                                                </HBox.margin>
+                                            </Button>
+                                        </children>
+                                        <effect>
+                                            <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+                                        </effect>
+                                    </HBox>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+
+                    </children>
+                </Pane>
+
+                <Pane fx:id="pnlCreateSchedule" prefHeight="200.0" prefWidth="200.0" >
+                    <children>
+
+                        <Label layoutX="57.0" layoutY="25.0" text="Schedule Application - Create Schedule" textFill="#300d33">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+                        <Pane  layoutX="14.0" layoutY="100.0" prefHeight="450.0" prefWidth="746.0" style="-fx-background-color: #300d33;">
+                            <Label layoutX="150.0" layoutY="58.0" text="Schedule Name" textFill="#FFFFFF">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="150.0" layoutY="108.0" text="Schedule Date" textFill="#FFFFFF">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="150.0" layoutY="158.0" text="Schedule Description" textFill="#FFFFFF">
+                                <font>
+                                    <Font size="18.0" />
+                                </font>
+                            </Label>
+                            <TextField fx:id="ScheduleName" layoutX="330.0" layoutY="58.0" prefHeight="32.0" prefWidth="258.0" promptText="Name for Schedule" />
+                            <TextField fx:id="ScheduleDate" layoutX="330.0" layoutY="108.0" prefHeight="32.0" prefWidth="258.0" promptText="Date" />
+                            <TextField fx:id="ScheduleDescription" layoutX="330.0" layoutY="158.0" prefHeight="130.0" prefWidth="258.0" promptText="Description" />
+                            <JFXButton fx:id="btnCreate"
+                                       layoutX="225.0"
+                                       layoutY="380.0"
+                                       onMouseClicked="#btnCreateSchedule"
+                                       prefHeight="39.0"
+                                       prefWidth="258.0"
+                                       style="-fx-background-color: #300d33; -fx-border-radius: 200; -fx-border-color: white; -fx-background-radius: 200; -fx-text-fill: white;"
+                                       text="Create Schedule">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </JFXButton>
+                        </Pane>
+                    </children>
+                </Pane>
+
+
+                <Pane fx:id="pnlOverview" prefHeight="554.0" prefWidth="793.0">
+                    <children>
+
+                        <Label layoutX="57.0" layoutY="25.0" text="Schedule Application - View Schedules" textFill="#300d33">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                        </Label>
+
+                        <HBox alignment="CENTER_LEFT" layoutX="45.0" layoutY="178.0" prefHeight="42.0" prefWidth="712.0" spacing="80.0" style="-fx-background-color: #FFFFFF;">
+                            <children>
+                                <Label text="Schedule Name" textFill="#300d33">
+                                    <HBox.margin>
+                                        <Insets left="50.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <Label text="Type" textFill="#300d33">
+                                    <HBox.margin>
+                                        <Insets left="50.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <Label text="Date" textFill="#300d33">
+                                    <HBox.margin>
+                                        <Insets left="50.0" />
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <ScrollPane layoutX="14.0" layoutY="232.0" prefHeight="320.0" prefWidth="746.0" stylesheets="@style.css">
+                            <content>
+                                <VBox fx:id="pnItems" prefHeight="318.0" prefWidth="744.0" spacing="5.0" style="-fx-background-color: #02030A;">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                    </padding>
+                                    <HBox fx:id="itemC" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="695.0" spacing="80.0" style="-fx-background-color: #02030A; -fx-background-radius: 5; -fx-background-insets: 0;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+                                        <children>
+                                            <ImageView fitHeight="31.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                <image>
+                                                    <Image url="/images/icons8-calendar-32.png" />
+                                                </image>
+                                                <HBox.margin>
+                                                    <Insets left="10.0" />
+                                                </HBox.margin>
+                                            </ImageView>
+                                            <Label fx:id="printName" text="ScheduleName" textFill="#b7c3d7" />
+                                            <Label fx:id="printType" text="TypeSchedule" textFill="#b7c3d7"/>
+                                            <Label fx:id="printDate" text="Date" textFill="#b7c3d7"/>
+
+
+                                            <Button fx:id="btnview" onMouseClicked="#btnView" mnemonicParsing="false" prefHeight="10.0" prefWidth="60.0" style="-fx-border-color: #2A73FF; -fx-border-radius: 20; -fx-background-color: transparent;" stylesheets="@style.css" text="View">
+                                                <HBox.margin>
+                                                    <Insets />
+                                                </HBox.margin>
+                                            </Button>
+                                        </children>
+                                        <effect>
+                                            <DropShadow blurType="GAUSSIAN" height="5.0" radius="2.0" width="5.0" />
+                                        </effect>
+                                    </HBox>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+
+                    </children>
+                </Pane>
+            </children>
+        </StackPane>
+    </children>
+    <effect>
+        <DropShadow color="#b63feb"/>
+    </effect>
+</AnchorPane>
